@@ -15,16 +15,20 @@ function ProtectedRoute({ component: Component, ...rest }: any) {
   return isAuthenticated ? <Component {...rest} /> : <Redirect to="/auth" />;
 }
 
+import LandingPage from "@/pages/landing";
+
 function Router() {
   const isAuthenticated = useStore(state => state.isAuthenticated);
 
   return (
     <Switch>
+      <Route path="/" component={LandingPage} />
+
       <Route path="/auth">
-        {isAuthenticated ? <Redirect to="/" /> : <Auth />}
+        {isAuthenticated ? <Redirect to="/app" /> : <Auth />}
       </Route>
       
-      <Route path="/">
+      <Route path="/app">
         {isAuthenticated ? <Home /> : <Redirect to="/auth" />}
       </Route>
       

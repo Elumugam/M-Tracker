@@ -39,7 +39,7 @@ export default function Auth() {
     // Simulate API call
     setTimeout(() => {
       login(data.name || data.email.split('@')[0], data.email);
-      setLocation('/');
+      setLocation('/app');
       setIsLoading(false);
     }, 1000);
   };

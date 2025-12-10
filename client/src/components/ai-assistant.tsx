@@ -49,23 +49,35 @@ export default function AiAssistant() {
     setInputValue('');
     setIsTyping(true);
 
-    // Simulate AI processing
-    setTimeout(() => {
-      const response = generateResponse(userMsg.content);
-      setMessages(prev => [...prev, {
-        id: (Date.now() + 1).toString(),
-        role: 'assistant',
-        content: response,
-        timestamp: new Date()
-      }]);
+    try {
+      // Simulate AI processing
+      setTimeout(() => {
+        const response = generateResponse(userMsg.content);
+        setMessages(prev => [...prev, {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: response,
+          timestamp: new Date()
+        }]);
+        setIsTyping(false);
+      }, 1500);
+    } catch (error) {
+      console.error("AI Error:", error);
       setIsTyping(false);
-    }, 1500);
+    }
   };
 
   const generateResponse = (query: string): string => {
     const q = query.toLowerCase();
     const totalSpent = expenses.reduce((sum, ex) => sum + ex.amount, 0);
     
+    // Add null check or default responses
+    if (!q) return "I'm listening. How can I help you today?";
+
+    if (q.includes('hello') || q.includes('hi')) {
+      return "Hello! I'm here to help you manage your finances. Ask me about your spending!";
+    }
+
     if (q.includes('total') || q.includes('spend')) {
       return `You've spent a total of ₹${totalSpent.toFixed(2)} so far. Would you like a breakdown by category?`;
     }

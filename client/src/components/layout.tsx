@@ -24,7 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [openMobile, setOpenMobile] = useState(false);
 
   const navItems = [
-    { label: 'Dashboard', icon: LayoutDashboard, href: '/' },
+    { label: 'Dashboard', icon: LayoutDashboard, href: '/app' },
     { label: 'Manage Expenses', icon: PieChart, href: '/manage' },
     { label: 'Settings', icon: Settings, href: '/settings' },
   ];
