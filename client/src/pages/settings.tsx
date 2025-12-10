@@ -95,7 +95,7 @@ export default function Settings() {
                       name="budget"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Monthly Budget ($)</FormLabel>
+                          <FormLabel>Monthly Budget (₹)</FormLabel>
                           <FormControl>
                             <div className="relative">
                               <Wallet className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />

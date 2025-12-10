@@ -79,7 +79,7 @@ export default function Home() {
               <DollarSign className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">${totalExpenses.toFixed(2)}</div>
+              <div className="text-2xl font-bold">₹{totalExpenses.toFixed(2)}</div>
               <p className="text-xs text-muted-foreground">Lifetime spend</p>
             </CardContent>
           </Card>
@@ -90,7 +90,7 @@ export default function Home() {
               <Calendar className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">${monthlyExpenses.toFixed(2)}</div>
+              <div className="text-2xl font-bold">₹{monthlyExpenses.toFixed(2)}</div>
               <p className="text-xs text-muted-foreground">For {format(today, 'MMMM')}</p>
             </CardContent>
           </Card>
@@ -101,7 +101,7 @@ export default function Home() {
               <TrendingUp className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">${dailyExpenses.toFixed(2)}</div>
+              <div className="text-2xl font-bold">₹{dailyExpenses.toFixed(2)}</div>
               <p className="text-xs text-muted-foreground">Today's activity</p>
             </CardContent>
           </Card>
@@ -113,9 +113,9 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <div className={`text-2xl font-bold ${remainingBudget < 0 ? 'text-destructive' : 'text-green-600'}`}>
-                ${remainingBudget.toFixed(2)}
+                ₹{remainingBudget.toFixed(2)}
               </div>
-              <p className="text-xs text-muted-foreground">From ${user?.budget} limit</p>
+              <p className="text-xs text-muted-foreground">From ₹{user?.budget} limit</p>
             </CardContent>
           </Card>
         </div>
@@ -149,7 +149,7 @@ export default function Home() {
                         </span>
                       </TableCell>
                       <TableCell className="text-right font-bold">
-                        ${expense.amount.toFixed(2)}
+                        ₹{expense.amount.toFixed(2)}
                       </TableCell>
                     </TableRow>
                   ))}

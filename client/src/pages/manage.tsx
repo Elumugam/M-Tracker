@@ -127,7 +127,7 @@ export default function Manage() {
                       fontSize={12} 
                       tickLine={false} 
                       axisLine={false}
-                      tickFormatter={(value) => `$${value}`}
+                      tickFormatter={(value) => `₹${value}`}
                     />
                     <Tooltip 
                       contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
@@ -237,7 +237,7 @@ export default function Manage() {
                         {expense.category}
                       </span>
                     </TableCell>
-                    <TableCell className="text-right font-bold">${expense.amount.toFixed(2)}</TableCell>
+                    <TableCell className="text-right font-bold">₹{expense.amount.toFixed(2)}</TableCell>
                     <TableCell className="text-right">
                       <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                         <Dialog open={editingId === expense.id} onOpenChange={(open) => !open && setEditingId(null)}>

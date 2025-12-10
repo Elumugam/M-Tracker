@@ -67,10 +67,10 @@ export default function AiAssistant() {
     const totalSpent = expenses.reduce((sum, ex) => sum + ex.amount, 0);
     
     if (q.includes('total') || q.includes('spend')) {
-      return `You've spent a total of $${totalSpent.toFixed(2)} so far. Would you like a breakdown by category?`;
+      return `You've spent a total of ₹${totalSpent.toFixed(2)} so far. Would you like a breakdown by category?`;
     }
     if (q.includes('save') || q.includes('reduce')) {
-      return "Based on your spending, here's a tip: Try setting a weekly limit for 'Entertainment'. You spent $15.99 on subscriptions recently. Could you consolidate them?";
+      return "Based on your spending, here's a tip: Try setting a weekly limit for 'Entertainment'. You spent ₹15.99 on subscriptions recently. Could you consolidate them?";
     }
     if (q.includes('category') || q.includes('breakdown')) {
       // Simple mock aggregation
